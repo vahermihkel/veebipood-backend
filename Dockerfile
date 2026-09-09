@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl unzip \
 
 COPY .mvn/ .mvn/
 COPY mvnw pom.xml ./
+RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline -B
 
 COPY src/ src/
